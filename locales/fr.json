@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "team": "Équipe",
+    "contact": "Contact"
+  },
+  "cta": {
+    "getStarted": "Commencer",
+    "bookAppointment": "Prendre rendez-vous"
+  },
+  "hero": {
+    "title": "Votre sourire, notre passion",
+    "description": "Découvrez des soins dentaires de qualité qui priorisent votre santé bucco-dentaire et votre bien-être général. Notre équipe d'experts s'engage à vous donner une raison de sourire.",
+    "satisfiedPatients": "Rejoignez nos 10 000+ patients satisfaits"
+  },
+  "services": {
+    "title": "Nos services complets",
+    "description": "Découvrez notre gamme de services dentaires conçus pour vous offrir un sourire parfait."
+  },
+  "whyChooseUs": {
+    "title": "Pourquoi choisir DentiPai ?",
+    "description": "Chez DentiPai, nous combinons expertise, technologie et compassion pour vous offrir la meilleure expérience de soins dentaires possible.",
+    "reasons": [
+      "Équipe de professionnels dentaires experts",
+      "Installations et équipements de pointe",
+      "Plans de traitement personnalisés"
+    ]
+  },
+  "testimonials": {
+    "title": "Ce que disent nos clients",
+    "description": "Lisez ce que nos patients satisfaits ont à dire sur leur expérience avec nous."
+  },
+  "faq": {
+    "title": "Questions fréquemment posées",
+    "description": "Trouvez des réponses aux questions courantes sur nos services dentaires et nos procédures."
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "description": "Nous sommes là pour répondre à toutes vos questions concernant nos services dentaires.",
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Numéro de téléphone",
+      "message": "Votre message",
+      "submit": "Envoyer"
+    }
+  }
+}
+
