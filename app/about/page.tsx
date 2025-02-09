@@ -6,9 +6,10 @@ import { ArrowRight, Building, CheckCircle, Clock, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { TeamCard } from '@/components/team-card';
 import { teamMembers } from '@/lib/team-members';
-import BlogSection from '@/components/blog-section';
-import Image from 'next/image';
+
 import HealthcareSection from '@/components/healthcare-section-hero';
+import { useEffect, useState } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const translations = {
   en: {
@@ -213,6 +214,14 @@ const translations = {
 export default function AboutPage() {
   const { language } = useLanguage();
   const t = translations[language];
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const video = document.getElementById('video');
+    if (video) {
+      video.onloadeddata = () => setLoading(false);
+    }
+  }, []);
 
   return (
     <div className="relative flex min-h-screen flex-col">
@@ -253,27 +262,31 @@ export default function AboutPage() {
 
 
           {/* Wide Video Section */}
-<motion.div
-  className="mt-12 mx-auto  container rounded-2xl overflow-hidden "
-  initial={{ opacity: 0, y: 50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.6 }}
->
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="w-10/12 h-72 mx-auto lg:h-80 object-cover shadow-xl rounded-xl"
-    style={{ aspectRatio: "16 / 9" }}
-  >
-    <source 
-      src={'https://cdn.qwenlm.ai/output/6929f205-427e-4eef-80bb-271ddcb18bbb/t2v/84e6354d-da3b-41ec-8473-80c8c9595f42/3f6821cb-256a-49ee-b6b6-46adf39591fe.mp4'} 
-      type="video/mp4" 
-    />
-    Your browser does not support the video tag.
-  </video>
-</motion.div>
+          <motion.div
+      className="mt-12 mx-auto container rounded-2xl overflow-hidden"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.6 }}
+    >
+      {loading && (
+        <Skeleton className="w-10/12 h-72 lg:h-80 mx-auto rounded-xl" />
+      )}
+      <video
+        id="video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={`w-10/12 h-72 mx-auto lg:h-80 object-cover shadow-xl rounded-xl ${loading ? 'hidden' : ''}`}
+        style={{ aspectRatio: '16 / 9' }}
+      >
+        <source
+          src={'https://cdn.qwenlm.ai/output/6929f205-427e-4eef-80bb-271ddcb18bbb/t2v/84e6354d-da3b-41ec-8473-80c8c9595f42/3f6821cb-256a-49ee-b6b6-46adf39591fe.mp4'}
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </motion.div>
         </AnimatedSection>
 
         {/* Mission and Values Section */}
