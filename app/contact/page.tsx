@@ -1,7 +1,6 @@
 'use client'
 
 import { ContactForm } from "@/components/contact-form"
-import { FAQ } from "@/components/faq"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import Image from "next/image"
 import { motion, useAnimation } from "framer-motion"
@@ -13,14 +12,13 @@ import {
   MessageCircle,
   HelpCircle,
 } from "lucide-react"
-import { keyframes, css } from "styled-components"
 import ContactTranslation from "@/lib/Translations/ContactsTranslations"
 import { useLanguage } from "@/context/LanguageContext"
 import HomeTranslations from "@/lib/Translations/HomeTranslations"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { ClinicLocation } from "@/components/clinic-location"
 
-export default function ContactPage() {
+ function ContactPage(): JSX.Element {
   const { language } = useLanguage()
 
   const controls = useAnimation()
@@ -168,3 +166,4 @@ const ContactCard = ({ icon, title, content }: { icon: JSX.Element; title: strin
   </div>
 )
 
+export default ContactPage
