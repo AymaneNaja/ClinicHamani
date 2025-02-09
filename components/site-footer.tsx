@@ -3,6 +3,9 @@
 import { useLanguage } from "@/context/LanguageContext"
 import { HeartPulse } from "lucide-react"
 import Link from "next/link"
+import { motion } from 'framer-motion';
+import aymane from '@/public/img-7.jpg'
+import Image from "next/image"
 
 const translations = {
   en: {
@@ -105,8 +108,17 @@ export function SiteFooter() {
           </ul>
         </div>
       </div>
-      <div className="border-t py-6">
-        <div className="container text-center text-sm text-muted-foreground">
+      <div className="border-t py-6 flex flex-col items-center">
+        <Link href="https://portfolio-l54739lar-aymanes-projects-5eae56dd.vercel.app/" target="_blank">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-16 h-16 overflow-hidden rounded-full border-2 border-primary cursor-pointer"
+          >
+            <Image src={aymane.src} alt="Ayman's Avatar" width={64} height={64} className="object-cover" />
+          </motion.div>
+        </Link>
+        <div className="container text-center text-sm text-muted-foreground mt-2">
           © {new Date().getFullYear()} {t.clinicName}. {t.rights}
         </div>
       </div>
